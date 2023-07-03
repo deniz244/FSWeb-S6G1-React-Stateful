@@ -29119,18 +29119,21 @@ var mutluRuhHali = "Oldukça mutlu :)";
 var uzgunRuhHali = "Oldukça üzgün :(";
 function RuhHalleri() {
   /* ADIM 1 */
-  var _React$useState = _react.default.useState(true),
+  var _React$useState = _react.default.useState(ilkRuhHali),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     ruhHali = _React$useState2[0],
     setRuhHali = _React$useState2[1];
   var mutluEt = function mutluEt() {
     /* ADIM 4 */
+    setRuhHali(mutluRuhHali);
   };
   var uZ = function uZ() {
     /* ADIM 5 */
+    setRuhHali(uzgunRuhHali);
   };
   var reset = function reset() {
     /* ADIM 6 */
+    setRuhHali(ilkRuhHali);
   };
   var stil = {
     fontSize: "1.5em",
@@ -29143,7 +29146,7 @@ function RuhHalleri() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, "RuhHalleri"), /*#__PURE__*/_react.default.createElement("div", {
     id: "ruhHali",
     style: stil
-  }, "'Nas\u0131l hissetti\u011Fimi bilmiyorum :-|'"), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  }, ruhHali, " ", ruhHali !== mutluRuhHali ? stil.color = "crimson" : stil.color = "royalblue"), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     id: "mutluEt",
     onClick: mutluEt
   }, "Mutlu Et"), /*#__PURE__*/_react.default.createElement("button", {
@@ -29216,6 +29219,7 @@ function Dondurucu() {
     /* ADIM 4 */
     setdondurucuAcik(!dondurucuAcik);
   };
+  var buttonTxt = dondurucuAcik ? "Gizle" : "Göster";
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "widget-spinner container"
   }, /*#__PURE__*/_react.default.createElement("h2", null, "D\xF6nd\xFCr\xFCc\xFC"), true && /*#__PURE__*/_react.default.createElement("div", {
@@ -29224,7 +29228,7 @@ function Dondurucu() {
   }, "--+--") /* ADIM 2 */, /*#__PURE__*/_react.default.createElement("button", {
     id: "toggleDondurucu",
     onClick: toggleDondurucu
-  }, "Gizle "));
+  }, buttonTxt, " "));
 }
 },{"react":"../node_modules/react/index.js"}],"components/Kareler.js":[function(require,module,exports) {
 "use strict";

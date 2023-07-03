@@ -46,6 +46,8 @@ export default function Dondurucu() {
     setdondurucuAcik(!dondurucuAcik);
   };
 
+  let buttonTxt = dondurucuAcik ? "Gizle" : "Göster";
+
   return (
     <div className="widget-spinner container">
       <h2>Döndürücü</h2>
@@ -57,7 +59,7 @@ export default function Dondurucu() {
         ) /* ADIM 2 */
       }
       <button id="toggleDondurucu" onClick={toggleDondurucu}>
-        Gizle {/* STEP 3 */}
+        {buttonTxt} {/* STEP 3 */}
       </button>
     </div>
   );

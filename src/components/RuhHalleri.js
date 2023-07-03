@@ -35,16 +35,19 @@ const uzgunRuhHali = "Oldukça üzgün :(";
 
 export default function RuhHalleri() {
   /* ADIM 1 */
-  const [ruhHali, setRuhHali] = React.useState(true);
+  const [ruhHali, setRuhHali] = React.useState(ilkRuhHali);
 
   const mutluEt = () => {
     /* ADIM 4 */
+    setRuhHali(mutluRuhHali);
   };
   const uZ = () => {
     /* ADIM 5 */
+    setRuhHali(uzgunRuhHali);
   };
   const reset = () => {
     /* ADIM 6 */
+    setRuhHali(ilkRuhHali);
   };
 
   const stil = {
@@ -57,7 +60,10 @@ export default function RuhHalleri() {
     <div className="widget-moods container">
       <h2>RuhHalleri</h2>
       <div id="ruhHali" style={stil}>
-        'Nasıl hissettiğimi bilmiyorum :-|'
+        {ruhHali}{" "}
+        {ruhHali !== mutluRuhHali
+          ? (stil.color = "crimson")
+          : (stil.color = "royalblue")}
       </div>{" "}
       {/* ADIM 3 */}
       <div>
